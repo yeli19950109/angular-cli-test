@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  //moduleId: module.id,
-  selector: 'app-root',
-  template:'<hero-form></hero-form>',
-  //templateUrl: './app.component.html',
-  //styleUrls: ['./app.component.css']
+    //moduleId: module.id,
+    selector: 'app-root',
+    template: `
+    <div class="container" >
+        <h2>angular-cli-test</h2>
+        <nav>
+            <a routerLink="/hero/form" routerLinkActive="active">hreo-form</a>
+            <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+            <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+        </nav>
+        <router-outlet></router-outlet>
+        <!--<hero-form></hero-form>-->
+    </div>
+    `,
+    //templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+    title = 'app works!';
 }
