@@ -1,0 +1,7 @@
+<router-outlet></router-outlet>
+<p>Get your crisis here</p>
+<ul>
+    <li *ngFor="let cri of crisis" (click)="gotoDetail()">
+        <span>{{cri.id}}</span>&nbsp;<span>{{cri.name}}</span>
+    </li>
+</ul>
