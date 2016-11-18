@@ -7,20 +7,21 @@ import {AppRoutingModule}   from './app-routing.module';
 import {AppComponent}       from './app.component';
 import {HeroFormComponent}  from './hero-form.component';
 import { HeroesModule } from './heros/heroes.module';
-import { CrisisListComponent } from './crisis-list.component';
+//import { CrisisListComponent } from './crisis/crisis-list.component';
+import { CrisisModule } from './crisis/crisis.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HeroFormComponent,
-        CrisisListComponent
+        HeroFormComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        HeroesModule
+        HeroesModule,
+        CrisisModule
     ],
     providers: [],
     bootstrap: [

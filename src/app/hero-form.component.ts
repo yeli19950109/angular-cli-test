@@ -2,7 +2,8 @@
  * Created by admin on 2016/11/16.
  */
 import { Component } from '@angular/core';
-import { Hero }    from './hero';
+import {Hero}from './hero'
+import { Heros }    from './heros';
 
 @Component({
     //moduleId: module.id,    只有用systemjs来打包采取要moduleId angular-cli自带的webpack打包不需要
@@ -10,17 +11,17 @@ import { Hero }    from './hero';
     templateUrl: 'hero-form.component.html'
 })
 export class HeroFormComponent {
-    powers = ['Really Smart', 'Super Flexible',
+    powers:string[] = ['Really Smart', 'Super Flexible',
         'Super Hot', 'Weather Changer'];
-    model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
-    submitted = false;
+    model = new Heros(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+    submitted:boolean = false;
 
-    onSubmit() { this.submitted = true; }
+    onSubmit():void { this.submitted = true; }
     // TODO: Remove this when we're done
     get diagnostic() { return JSON.stringify(this.model); }
     newHero() {
-        this.model = new Hero(42, '', '');
-        console.log(Hero)
+        this.model = new Heros(42, '', '');
+        console.log(Heros)
         console.log(this.model);
     }
 }
