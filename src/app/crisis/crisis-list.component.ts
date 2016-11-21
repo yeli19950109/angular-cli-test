@@ -16,6 +16,7 @@ import { CrisisService } from './crisis.service';
 })
 export class CrisisListComponent implements OnInit {
     public crisis:Crisis[];
+
     constructor(private crisisService:CrisisService,private router:Router,private route:ActivatedRoute) { }
 
     getCrisis():void{

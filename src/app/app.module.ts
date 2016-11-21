@@ -6,24 +6,34 @@ import {HttpModule}         from '@angular/http';
 import {AppRoutingModule}   from './app-routing.module';
 import {AppComponent}       from './app.component';
 import {HeroFormComponent}  from './hero-form.component';
-import { HeroesModule } from './heros/heroes.module';
+import { HeroesModule }     from './heros/heroes.module';
 //import { CrisisListComponent } from './crisis/crisis-list.component';
-import { CrisisModule } from './crisis/crisis.module';
+import { CrisisModule }     from './crisis/crisis.module';
+import { AdminModule }      from './admin/admin.module';
+import { LoginRoutingModule }   from './login-routing.module';
+import { LoginComponent }       from './login.component';
+
+import {DialogService}from './dialog.service';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HeroFormComponent
+        HeroFormComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
+        LoginRoutingModule,
         AppRoutingModule,
         HeroesModule,
-        CrisisModule
+        CrisisModule,
+        //AdminModule
     ],
-    providers: [],
+    providers: [
+        DialogService
+    ],
     bootstrap: [
         AppComponent
     ]

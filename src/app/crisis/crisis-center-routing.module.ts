@@ -9,6 +9,9 @@ import { CrisisListComponent } from './crisis-list.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 import { CrisisDetailComponent } from './crisis-detail.component';
 
+import { CanDeactivateGuard }    from '../can-deactivate-guard.service';
+import { CrisisDetailResolve }   from './crisis-detail-resolve.service';
+
 @NgModule({
     imports: [
         RouterModule.forChild([
@@ -22,7 +25,11 @@ import { CrisisDetailComponent } from './crisis-detail.component';
                         children: [
                             {
                                 path: ':id',
-                                component: CrisisDetailComponent
+                                component: CrisisDetailComponent,
+                                canDeactivate: [CanDeactivateGuard],
+                                resolve: {
+                                    crisis: CrisisDetailResolve
+                                }
                             },
                             {
                                 path: '',
@@ -36,7 +43,8 @@ import { CrisisDetailComponent } from './crisis-detail.component';
     ],
     exports: [
         RouterModule
-    ]
+    ],
+    providers:[CrisisDetailResolve]
 })
 export class CrisisCenterRoutingModule { }
 
