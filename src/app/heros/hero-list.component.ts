@@ -2,7 +2,7 @@
  * Created by admin on 2016/11/18.
  */
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router ,ActivatedRoute,Params} from '@angular/router';
 
 @Component({
     //moduleId: module.id,
@@ -13,9 +13,18 @@ import { Router } from '@angular/router';
     // <p>Get your heroes here</p>`
 })
 export class HeroListComponent implements OnInit {
-    constructor(private router:Router) { }
+    constructor(
+        private router:Router,
+        private route:ActivatedRoute
+    ) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.route.params.forEach((params: Params) => {
+            let id = +params['id']; // (+) converts string 'id' to a number
+            let fo=params['foo'];
+            console.log(params);
+        });
+    }
     gotoDetail(): void {
         this.router.navigate(['/hero', 1]);
     }
