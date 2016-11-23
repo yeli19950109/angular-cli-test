@@ -17,4 +17,7 @@ export class CrisisService {
         return CRISIS;
     }
 
+    gety():Promise<Crisis[]>{
+        return Promise.resolve(CRISIS);
+    }
 }
