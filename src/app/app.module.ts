@@ -1,20 +1,20 @@
-import {BrowserModule}      from '@angular/platform-browser';
-import {NgModule}           from '@angular/core';
-import {FormsModule}        from '@angular/forms';
-import {HttpModule}         from '@angular/http';
+import {BrowserModule}          from '@angular/platform-browser';
+import {NgModule}               from '@angular/core';
+import {FormsModule}            from '@angular/forms';
+import {HttpModule}             from '@angular/http';
 
-import {AppRoutingModule}   from './app-routing.module';
-import {AppComponent}       from './app.component';
-import {HeroFormComponent}  from './hero-form.component';
-import { HeroesModule }     from './heros/heroes.module';
-//import { CrisisListComponent } from './crisis/crisis-list.component';
-import { CrisisModule }     from './crisis/crisis.module';
-import { AdminModule }      from './admin/admin.module';
+import {AppRoutingModule}       from './app-routing.module';
+import { HeroesModule }         from './heros/heroes.module';
+import { CrisisModule }         from './crisis/crisis.module';
 import { LoginRoutingModule }   from './login-routing.module';
+import { ContactModule }        from './contact/contact.module';
+import {AppComponent}           from './app.component';
+import {HeroFormComponent}      from './hero-form.component';
 import { LoginComponent }       from './login.component';
-import { HighlightDirective} from './highlight.directive';
+import { HighlightDirective}    from './highlight.directive';
 
-import {DialogService}from './dialog.service';
+import {DialogService}          from './dialog.service';
+import {UserService}            from './user.service';
 
 @NgModule({
     declarations: [
@@ -31,10 +31,12 @@ import {DialogService}from './dialog.service';
         AppRoutingModule,
         HeroesModule,
         CrisisModule,
-        //AdminModule
+        ContactModule
+        //AdminModule 利用路由懒加载
     ],
     providers: [
-        DialogService
+        DialogService,
+        UserService
     ],
     bootstrap: [
         AppComponent
