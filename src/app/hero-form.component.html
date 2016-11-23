@@ -42,5 +42,36 @@
         <br>
         <button class="btn btn-default" (click)="submitted=false">Edit</button>
     </div>
+    <div *ngIf="current" >
+        now current=true;
+        div *ngIf="current"
+    </div>
+    <template [ngIf]="!current">
+        <div>
+            now current=false;
+            template [ngIf]="!current"
+        </div>
+    </template>
+    <template ngIf="!current">
+        <div>
+            now current=false;
+            template ngIf="!current"
+        </div>
+    </template>
+    <button (click)="schange()">schange</button>
+    <div [ngSwitch]="toeChoice">
 
 
+      <span *ngSwitchCase="'Eenie'">Eenie</span>
+      <span *ngSwitchCase="'Meanie'">Meanie</span>
+
+      <template [ngSwitchCase]="'Miney'"><span>Miney</span></template>
+      <template [ngSwitchCase]="'Moe'"><span>Moe</span></template>
+      <template ngSwitchDefault><span>other</span></template>
+
+    </div>
+    <button (click)="sswitch()">sswitch</button>
+
+    <template ngFor let-hero [ngForOf]="heroes" [ngForTrackBy]="trackByHeroes">
+        <div style="color: red;">{{hero.name}}</div>
+    </template>
