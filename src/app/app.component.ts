@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
     selector: 'app-root',
     template: `
     <div class="container" >
-        <h2>angular-cli-test</h2>
+        <h2 highlight>angular-cli-test</h2>
         <nav>
             <a routerLink="/hero/form" routerLinkActive="active">hreo-form</a>
             <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>

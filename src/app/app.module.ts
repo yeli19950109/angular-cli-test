@@ -12,6 +12,7 @@ import { CrisisModule }     from './crisis/crisis.module';
 import { AdminModule }      from './admin/admin.module';
 import { LoginRoutingModule }   from './login-routing.module';
 import { LoginComponent }       from './login.component';
+import { HighlightDirective} from './highlight.directive';
 
 import {DialogService}from './dialog.service';
 
@@ -19,7 +20,8 @@ import {DialogService}from './dialog.service';
     declarations: [
         AppComponent,
         HeroFormComponent,
-        LoginComponent
+        LoginComponent,
+        HighlightDirective
     ],
     imports: [
         BrowserModule,
