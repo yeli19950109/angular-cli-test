@@ -8,6 +8,7 @@ import { CrisisCenterComponent } from './crisis-center.component';
 import { CrisisListComponent } from './crisis-list.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 import { CrisisDetailComponent } from './crisis-detail.component';
+import { PageNotFoundComponent } from '../page-not-found.component';
 
 import { CanDeactivateGuard }    from '../can-deactivate-guard.service';
 import { CrisisDetailResolve }   from './crisis-detail-resolve.service';
@@ -38,7 +39,8 @@ import { CrisisDetailResolve }   from './crisis-detail-resolve.service';
                         ]
                     }
                 ]
-            }
+            },
+            // { path:'**',component:PageNotFoundComponent}
         ])
     ],
     exports: [
