@@ -26,3 +26,9 @@ nav a:hover {
 nav a.active {
     color: #039be5;
 }
+.main-box{
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height:calc( 100% - 5px );
+    min-width:calc( 100% );
+}

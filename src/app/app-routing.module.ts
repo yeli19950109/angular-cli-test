@@ -5,11 +5,13 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import {HeroFormComponent}      from './hero-form.component';
-import {PageNotFoundComponent}  from './page-not-found.component';
-import {IndexComponent} from './index.component';
+import {TestComponent }         from './test.component';
+// import {PageNotFoundComponent}  from './page-not-found.component';
+// import {IndexComponent}         from './index.component';
+// import { LoginRoutingModule }   from './login-routing.module';
 import { CanDeactivateGuard }   from './can-deactivate-guard.service';
 import {AuthGuard}              from './auth-guard.service'
-//import {CrisisListComponent}  from './crisis/crisis-list.component';
+//import {CrisisListComponent}     from './crisis/crisis-list.component';
 
 const routes: Routes = [
     // {
@@ -19,6 +21,7 @@ const routes: Routes = [
     //     ]
     // },
     {path: 'hero/form', component: HeroFormComponent},
+    {path: 'test', component:TestComponent},
     {path:'admin',loadChildren: 'app/admin/admin.module#AdminModule', canLoad: [AuthGuard]},
     { path: '', redirectTo: 'hero/form', pathMatch: 'full' },
     { path:'index.html',redirectTo:'hero/form',pathMatch:'full'},
