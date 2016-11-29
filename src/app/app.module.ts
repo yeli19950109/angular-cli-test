@@ -2,6 +2,7 @@ import {BrowserModule}          from '@angular/platform-browser';
 import {NgModule}               from '@angular/core';
 import {FormsModule}            from '@angular/forms';
 import {HttpModule}             from '@angular/http';
+import {NgbModule}               from '@ng-bootstrap/ng-bootstrap';
 
 import {AppRoutingModule}       from './app-routing.module';
 import { HeroesModule }         from './heros/heroes.module';
@@ -13,7 +14,9 @@ import {HeroFormComponent}      from './hero-form.component';
 import {PageNotFoundComponent}  from './page-not-found.component';
 import {IndexComponent}         from './index.component';
 import { LoginComponent }       from './login.component';
+import { TestComponent }        from './test.component';
 import { HighlightDirective}    from './highlight.directive';
+import { TestDirective }        from './test.directive';
 
 import {DialogService}          from './dialog.service';
 import {UserService}            from './user.service';
@@ -25,6 +28,8 @@ import {UserService}            from './user.service';
         LoginComponent,
         HighlightDirective,
         PageNotFoundComponent,
+        TestDirective,
+        TestComponent
         //IndexComponent
     ],
     imports: [
@@ -35,7 +40,8 @@ import {UserService}            from './user.service';
         AppRoutingModule,
         HeroesModule,
         CrisisModule,
-        ContactModule
+        ContactModule,
+        NgbModule.forRoot()    //在顶层节点要注意forRoot 另外则不需要
         //AdminModule 利用路由懒加载
         //经过实验 模块加载的先后顺序会对路由造成影响
         // 先加载的模块的路由会先被匹配
