@@ -15,6 +15,9 @@ import {PageNotFoundComponent}  from './page-not-found.component';
 import {IndexComponent}         from './index.component';
 import { LoginComponent }       from './login.component';
 import { TestComponent }        from './test.component';
+import { Test2Component }       from './test2.component';
+import { Test3Component }       from './test3.component';
+import { NgbdModalContent }     from './modal.contact';
 import { HighlightDirective}    from './highlight.directive';
 import { TestDirective }        from './test.directive';
 
@@ -29,9 +32,13 @@ import {UserService}            from './user.service';
         HighlightDirective,
         PageNotFoundComponent,
         TestDirective,
-        TestComponent
+        TestComponent,
+        Test2Component,
+        NgbdModalContent,
+        Test3Component
         //IndexComponent
     ],
+    entryComponents: [NgbdModalContent],  //使用 ng-bootstrap的模态框时一定要记得加这个
     imports: [
         BrowserModule,
         FormsModule,
