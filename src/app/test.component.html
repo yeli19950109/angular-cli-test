@@ -1,0 +1,82 @@
+<div class="row">
+    <ngb-accordion [closeOthers]="true"  activeIds="" #ngbacc1 (panelChange)="beforeChange($event)">
+        <ngb-panel id="1" title="qwe" type="info"  [disabled]="false">
+            <!--当加上type=“info”后 该div会被加上card-info的class-->
+            <template ngbPanelContent>
+                asdasd
+            </template>
+        </ngb-panel>
+        <ngb-panel id="2" title="qqq"  >
+            <template ngbPanelContent>
+                asdasdasdasdasd
+            </template>
+        </ngb-panel>
+        <ngb-panel id="3" title="asd">
+            <template ngbPanelContent>
+                asdaasdsaf
+            </template>
+        </ngb-panel>
+        <ngb-panel id="4" title="Simple">
+            <template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                labore sustainable VHS.
+            </template>
+        </ngb-panel>
+    </ngb-accordion>
+    <button class="btn btn-sm btn-outline-primary" (click)="ngbacc1.toggle('1')">Toggle first</button>
+    <button class="btn btn-sm btn-outline-primary" (click)="ngbacc1.toggle('2')">Toggle second</button>
+    <br>
+    <ngb-alert [dismissible]="false">
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+    <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+    <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+    <br>
+    <ngb-alert *ngIf="staticAlertClosed" (close)="staticAlertClosed = false">
+        Check out our awesome new features!
+    </ngb-alert>
+    <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">
+        {{ successMessage }}
+    </ngb-alert>
+    <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+    <br>
+    <ngb-alert type="custom" [dismissible]="false">
+        <strong>Whoa!</strong> This is a custom alert.
+    </ngb-alert>
+    <br>
+    <ngb-alert>
+        <!--不指定type则使用alertConfig-->
+        This alert's type is success and it's not dismissible because the config has been customized
+    </ngb-alert>
+    <br>
+    <br>
+    <ngb-carousel>
+        <template ngbSlide>
+            <img src="http://lorempixel.com/900/500?r=1" alt="Random first slide">
+            <div class="carousel-caption">
+                <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+        </template>
+        <template ngbSlide>
+            <img src="http://lorempixel.com/900/500?r=2" alt="Random second slide">
+            <div class="carousel-caption">
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </template>
+        <template ngbSlide>
+            <img src="http://lorempixel.com/900/500?r=3" alt="Random third slide">
+            <div class="carousel-caption">
+                <h3>Third slide label</h3>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+        </template>
+    </ngb-carousel>
+</div>

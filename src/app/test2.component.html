@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary" [class.active]="model.left">
+                <input type="checkbox" [(ngModel)]="model.left" value="left"> Left (pre-checked)
+            </label>
+            <label class="btn btn-primary" [class.active]="model.middle">
+                <input type="checkbox" [(ngModel)]="model.middle" value="middle"> Middle
+            </label>
+            <label class="btn btn-primary" [class.active]="model.right">
+                <input type="checkbox" [(ngModel)]="model.right" value="right"> Right
+            </label>
+        </div>
+        <pre>{{model | json}}</pre>
+    </div>
+    <hr>
+    <div class="col-xs-12">
+        <div [(ngModel)]="model1" ngbRadioGroup name="radioBasic">
+            <label class="btn btn-primary">
+                <input type="radio" [value]="1"> Left (pre-checked)
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" [value]="middle"> Middle
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" [value]="false"> Right
+            </label>
+        </div>
+        <pre>{{model1}}</pre>
+    </div>
+    <hr>
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-outline-primary"
+                (click)="isCollapsed = !isCollapsed">Toggle</button>
+        <p>isCollapsed:{{isCollapsed}}</p>
+        <div [ngbCollapse]="isCollapsed">
+            <div class="card">
+                <div class="card-block">
+                    You can collapse this card by clicking Toggle
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <ngb-datepicker  style="width: 300px;" id="datap1"    #dp [(ngModel)]="timemodel"
+                        (navigate)="date = $event.next">
+        </ngb-datepicker>
+        <hr/>
+        <button class="btn btn-sm btn-outline-primary" (click)="selectToday()">Select Today</button>
+        <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo()">To current month</button>
+        <button class="btn btn-sm btn-outline-primary" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
+        <hr/>
+        <pre>Month: {{ date.month }}.{{ date.year }}</pre>
+        <pre>Model: {{ timemodel | json }}</pre>
+    </div>
+    <div class="col-xs-12">
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model2" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-addon" (click)="d.toggle()" >
+                        <img src="../assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr/>
+        <pre>Model: {{ model2 | json }}</pre>
+    </div>
+    <div class="col-xs-12">
+        <ngb-datepicker [displayMonths]="displayMonths" [navigation]="navigation"></ngb-datepicker>
+
+        <hr/>
+
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp1" [displayMonths]="displayMonths" [navigation]="navigation" ngbDatepicker #d1="ngbDatepicker">
+                    <div class="input-group-addon" (click)="d1.toggle()" >
+                        <img src="../assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <hr/>
+
+        <select class="custom-select" [(ngModel)]="displayMonths">
+            <option [value]="1">One month</option>
+            <option [value]="2">Two months</option>
+            <option [value]="3">Three months</option>
+        </select>
+
+        <select class="custom-select" [(ngModel)]="navigation">
+            <option value="none">Without navigation</option>
+            <option value="select">With select boxes</option>
+            <option value="arrows">Without select boxes</option>
+        </select>
+    </div>
+    <div class="col-xs-12">
+        <div ngbDropdown [up]="toggled" class="d-inline-block" #myDrop="ngbDropdown">
+            <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>
+                Toggle dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <button class="dropdown-item">Action - 1</button>
+                <button class="dropdown-item">Another Action</button>
+                <button class="dropdown-item">Something else is here</button>
+            </div>
+        </div>
+        <button class="btn btn-outline-success"
+                (click)="$event.stopPropagation(); myDrop.open();toggled=false">Open down</button>
+        <button class="btn btn-outline-success"
+                (click)="$event.stopPropagation(); myDrop.open();toggled=true">Open up</button>
+        <button class="btn btn-outline-danger"
+                (click)="$event.stopPropagation(); myDrop.close();">Close from outside</button>
+    </div>
+    <div class="col-xs-12" style="height: 300px;">
+
+    </div>
+</div>
+

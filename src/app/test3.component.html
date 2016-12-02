@@ -1,0 +1,17 @@
+
+<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>
+<template ngbModalContainer></template>
+maxSize = 5, rotate = true, ellipses = false
+<ngb-pagination [collectionSize]="totalNum" [(page)]="currentPage"
+                [directionLinks]="true" [boundaryLinks]="true" size="sm"
+                [maxSize]="5" [rotate]="true" [ellipses]="false">
+</ngb-pagination>
+<template #popContent>Hello, <b>{{name}}</b>!</template>
+<button type="button" class="btn btn-secondary" container="body" placement="right"
+        [ngbPopover]="popContent" #popover="ngbPopover"
+        triggers="mouseenter:mouseleave" popoverTitle="Pop title">
+    Hover over me!
+</button>
+<p>
+    Popover is currently: <code>{{ popover.isOpen() ? 'open' : 'closed' }}</code>
+</p>
