@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {HeroFormComponent}      from './hero-form.component';
 import {TestComponent }         from './test.component';
+import { Test2Component } from './test2.component';
+import { Test3Component } from './test3.component';
 // import {PageNotFoundComponent}  from './page-not-found.component';
 // import {IndexComponent}         from './index.component';
 // import { LoginRoutingModule }   from './login-routing.module';
@@ -22,6 +24,8 @@ const routes: Routes = [
     // },
     {path: 'hero/form', component: HeroFormComponent},
     {path: 'test', component:TestComponent},
+    {path:'test2', component:Test2Component},
+    {path:'test3', component:Test3Component},
     {path:'admin',loadChildren: 'app/admin/admin.module#AdminModule', canLoad: [AuthGuard]},
     { path: '', redirectTo: 'hero/form', pathMatch: 'full' },
     { path:'index.html',redirectTo:'hero/form',pathMatch:'full'},
